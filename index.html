@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,123 @@
     <title>Page Title</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1> <a href="index2.html">This link goes to page 2</a></h1>
-  
-<h2>secondary heading</h2>
-<p>paragraph</p>
+    <div class="slide-container">
+
+
+        <div class="slide1">
+            <div class="slide1-content">
+            <h1> <a href="index2.html">This link goes to page 2</a></h1>
+
+            <h2>secondary heading</h2>
+            <p>paragraph</p>
+            </div>
+
+        <img class="fly" src="fly.gif"></img>
+        </div>
+
+
+        <div class="slide2">
+            <h1> <a href="index2.html">This link goes to page 2</a></h1>
+
+            <h2>secondary heading</h2>
+            <p>paragraph</p>
+
+        <img class="fly" src="fly.gif"></img>
+        </div>
+
+
+        <div class="slide3">
+            <h1> <a href="index2.html">This link goes to page 2</a></h1>
+
+            <h2>secondary heading</h2>
+            <p>paragraph</p>
+        </div>
+    </div>
 
 </body>
-<style> 
-    body {background-image: url("vase.jpg");}
+<style>
+
+    .fly{
+        /* position absolute allows you to individually position elements  */
+        position: absolute;
+        top: 60vh;
+        left: 60vw;
+        bottom: 0px;
+        right: 0px;
+        width: 200px;
+    }
+
+    body {
+        /* this is a line for when you want to make your background an image */
+        background-image: url("web.jpg");
+
+        /* To change how the background tiles/stretches, edit this */
+        background-size: 100% 100%;
+
+        width: 400vw;
+        height: 100vh;
+    }
+
+    /* setting up the flex container */
+    .slide-container {
+        /* The first is setting the parent container to display: flex */
+        display: flex;
+        /* The second is setting the flex-direction to row or column */
+        flex-direction: row;
+        position: relative;
+    }
+
+    .slide1 {
+        width: 100vw;
+
+    }
+
+    /* We added another div to contain the actual slide content, for styling purposes */
+    .slide1-content{
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 200px;
+    }
+
+    .slide2 {
+        position: relative;
+        width: 100vw;
+    }
+
+    .slide3 {
+        position: relative;
+        width: 80vw;
+    }
+
+
 </style>
+
+
+    <script>
+  let scrollSpeed = 1; // pixels per frame
+  let isScrolling = true;
+
+  function autoScroll() {
+    if (isScrolling) {
+      window.scrollBy(scrollSpeed, 0);
+      requestAnimationFrame(autoScroll);
+    }
+  }
+
+  // Start scrolling when the page loads
+  window.onload = () => {
+    autoScroll();
+  };
+
+  // Optional: stop/start scrolling on click
+  window.addEventListener('click', () => {
+    isScrolling = !isScrolling;
+    if (isScrolling) autoScroll();
+  });
+</script>
+
 </html>
