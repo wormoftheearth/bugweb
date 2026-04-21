@@ -22,15 +22,20 @@
             <p>paragraph</p>
             </div>
         <div>
-            <audio id="bg-audio">
-          <source src="flytrap.mp3" type="audio/mpeg">
-            </audio>
+        <audio id="bg-audio">
+        <source src="flytrap.mp3" type="audio/mpeg">
+        </audio>
 
-            <script>
-              document.addEventListener("click", function () {
-               document.getElementById("bg-audio").play();
-             }, { once: true });
-                </script>
+        <script>
+          const audio = document.getElementById("bg-audio");
+
+         function playAudioOnce() {
+           audio.play().catch(err => console.log("Playback failed:", err));
+           document.removeEventListener("keydown", playAudioOnce);
+             }
+
+          document.addEventListener("keydown", playAudioOnce);
+</script>
         </div>
 
         <img class="fly" src="fly.gif"></img>
