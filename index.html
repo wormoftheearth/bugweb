@@ -121,8 +121,10 @@
 
 
     <script>
-  let scrollSpeed = .5; // pixels per frame
-  let isScrolling = true;
+    let scrollSpeed = 1;
+    let isScrolling = true;
+    let lastTime = 0;
+    let delay = 30; // milliseconds between scroll steps
 
   function autoScroll() {
     if (isScrolling) {
