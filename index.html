@@ -120,28 +120,29 @@
 </style>
 
 
-    <script>
-    let scrollSpeed = 1;
-    let isScrolling = true;
-    let lastTime = 0;
-    let delay = 55; // milliseconds between scroll steps
+<script>
+  let scrollSpeed = 1;
+  let isScrolling = true;
+  let lastTime = 0;
+  let delay = 100; // higher = slower
 
-  function autoScroll() {
+  function autoScroll(timestamp) {
     if (isScrolling) {
-      window.scrollBy(scrollSpeed, 0);
+      if (timestamp - lastTime > delay) {
+        window.scrollBy(scrollSpeed, 0);
+        lastTime = timestamp;
+      }
       requestAnimationFrame(autoScroll);
     }
   }
 
-  // Start scrolling when the page loads
   window.onload = () => {
-    autoScroll();
+    requestAnimationFrame(autoScroll);
   };
 
-  // Optional: stop/start scrolling on click
   window.addEventListener('click', () => {
     isScrolling = !isScrolling;
-    if (isScrolling) autoScroll();
+    if (isScrolling) requestAnimationFrame(autoScroll);
   });
 </script>
 
