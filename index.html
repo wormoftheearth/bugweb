@@ -3,162 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Page Title</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="slide-container">
 
-
+        <!-- SLIDE 1 -->
         <div class="slide1">
             <div class="slide1-content">
-            <p style="font-family: 'Helvetica', sans-serif; font-size: 24px;">
-             press any    
-            <span style="font-size: 40px;">  abcdefghijklmnopqrstuvwxyz  </span>
-              for sound
-</p>
+                <p style="font-family: 'Helvetica', sans-serif; font-size: 24px;">
+                    press any
+                    <span style="font-size: 40px;">abcdefghijklmnopqrstuvwxyz</span>
+                    for sound
+                </p>
             </div>
-        <div>
-        <audio id="bg-audio">
-        <source src="flytrap.mp3" type="audio/mpeg">
 
-        <audio id="bg-audio">
-        <source src="flytrap.mp3" type="audio/mpeg">
-        </audio>
+            <audio id="bg-audio">
+                <source src="flytrap.mp3" type="audio/mpeg">
+            </audio>
 
-        <script>
-         const audio = document.getElementById("bg-audio");
-
-          document.addEventListener("keydown", function () {
-            if (audio.paused) {
-              audio.play().catch(err => console.log("Playback failed:", err));
-            } else {
-              audio.pause();
-    }
-  });
-</script>
+            <img class="fly" src="fly.gif">
         </div>
 
-        <img class="fly" src="fly.gif"></img>
-        </div>
-
-
+        <!-- SLIDE 2 -->
         <div class="slide2">
-            <<p style="font-family: 'Helvetica', sans-serif; font-size: 24px;">
-            THE ONLY OTHER<br>
-            WHO WILL EVER<br>
-            KNOW ME<br>
-            LIKE YOU DO -<br>
-            IS THE INSIDE PART -<br>
-            OF YOU<br>
-           THAT HAS EATEN ME
+            <div class="slide2-content">
+                <p style="font-family: 'Helvetica', sans-serif; font-size: 24px;">
+                    THE ONLY OTHER<br>
+                    WHO WILL EVER<br>
+                    KNOW ME<br>
+                    LIKE YOU DO -<br>
+                    IS THE INSIDE PART -<br>
+                    OF YOU<br>
+                    THAT HAS EATEN ME
+                </p>
+            </div>
 
-        <img class="fly" src="fly.gif"></img>
+            <img class="fly" src="fly.gif">
         </div>
 
-
+        <!-- SLIDE 3 -->
         <div class="slide3">
-            <h1> <a href="index2.html">This link goes to page 2</a></h1>
-
+            <h1><a href="index2.html">This link goes to page 2</a></h1>
             <h2>secondary heading</h2>
             <p>paragraph</p>
         </div>
+
     </div>
 
 </body>
-<style>
 
-    .fly{
-        /* position absolute allows you to individually position elements  */
+<style>
+    .fly {
         position: absolute;
         top: 60vh;
         left: 60vw;
-        bottom: 0px;
-        right: 0px;
         width: 200px;
     }
 
     body {
-        /* this is a line for when you want to make your background an image */
         background-image: url("web.jpg");
-
-        /* To change how the background tiles/stretches, edit this */
         background-size: 100% 100%;
-
         width: 400vw;
         height: 100vh;
+        margin: 0;
     }
 
-    /* setting up the flex container */
     .slide-container {
-        /* The first is setting the parent container to display: flex */
         display: flex;
-        /* The second is setting the flex-direction to row or column */
         flex-direction: row;
         position: relative;
     }
 
-    .slide1 {
+    .slide1, .slide2, .slide3 {
         width: 100vw;
-
+        position: relative;
     }
 
-    /* We added another div to contain the actual slide content, for styling purposes */
-    .slide1-content{
+    .slide1-content {
         width: 50%;
         margin-left: 35%;
-        margin-right: 15%;
         margin-top: 200px;
     }
 
-    .slide2 {
-        position: relative;
-        width: 100vw;
-    }
-
-    .slide2-content{
+    .slide2-content {
         width: 40%;
         margin-left: 30%;
-        margin-right: 30%;
         margin-top: 200px;
     }
-
-    .slide3 {
-        position: relative;
-        width: 80vw;
-    }
-
-
 </style>
 
-
 <script>
-  let scrollSpeed = 1;
-  let isScrolling = true;
-  let lastTime = 0;
-  let delay = 25; // higher = slower
+    // AUDIO TOGGLE
+    const audio = document.getElementById("bg-audio");
 
-  function autoScroll(timestamp) {
-    if (isScrolling) {
-      if (timestamp - lastTime > delay) {
-        window.scrollBy(scrollSpeed, 0);
-        lastTime = timestamp;
-      }
-      requestAnimationFrame(autoScroll);
+    document.addEventListener("keydown", function () {
+        if (audio.paused) {
+            audio.play().catch(err => console.log("Playback failed:", err));
+        } else {
+            audio.pause();
+        }
+    });
+
+    // AUTO SCROLL
+    let scrollSpeed = 1;
+    let isScrolling = true;
+    let lastTime = 0;
+    let delay = 25;
+
+    function autoScroll(timestamp) {
+        if (isScrolling) {
+            if (timestamp - lastTime > delay) {
+                window.scrollBy(scrollSpeed, 0);
+                lastTime = timestamp;
+            }
+            requestAnimationFrame(autoScroll);
+        }
     }
-  }
 
-  window.onload = () => {
-    requestAnimationFrame(autoScroll);
-  };
+    window.onload = () => {
+        requestAnimationFrame(autoScroll);
+    };
 
-  window.addEventListener('click', () => {
-    isScrolling = !isScrolling;
-    if (isScrolling) requestAnimationFrame(autoScroll);
-  });
+    window.addEventListener('click', () => {
+        isScrolling = !isScrolling;
+        if (isScrolling) requestAnimationFrame(autoScroll);
+    });
 </script>
 
 </html>
