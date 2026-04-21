@@ -22,9 +22,15 @@
             <p>paragraph</p>
             </div>
         <div>
-            <audio controls autoplay >
-         <source src="flytrap.mp3" type="audio/mpeg">
+            <audio id="bg-audio">
+          <source src="flytrap.mp3" type="audio/mpeg">
             </audio>
+
+            <script>
+              document.addEventListener("click", function () {
+               document.getElementById("bg-audio").play();
+             }, { once: true });
+                </script>
         </div>
 
         <img class="fly" src="fly.gif"></img>
