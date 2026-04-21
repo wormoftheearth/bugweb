@@ -24,17 +24,21 @@
         <div>
         <audio id="bg-audio">
         <source src="flytrap.mp3" type="audio/mpeg">
+
+        <audio id="bg-audio">
+        <source src="flytrap.mp3" type="audio/mpeg">
         </audio>
 
         <script>
-          const audio = document.getElementById("bg-audio");
+         const audio = document.getElementById("bg-audio");
 
-         function playAudioOnce() {
-           audio.play().catch(err => console.log("Playback failed:", err));
-           document.removeEventListener("keydown", playAudioOnce);
-             }
-
-              document.addEventListener("keydown", playAudioOnce);
+          document.addEventListener("keydown", function () {
+            if (audio.paused) {
+              audio.play().catch(err => console.log("Playback failed:", err));
+            } else {
+              audio.pause();
+    }
+  });
 </script>
         </div>
 
@@ -124,7 +128,7 @@
   let scrollSpeed = 1;
   let isScrolling = true;
   let lastTime = 0;
-  let delay = 70; // higher = slower
+  let delay = 50; // higher = slower
 
   function autoScroll(timestamp) {
     if (isScrolling) {
