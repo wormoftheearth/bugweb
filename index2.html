@@ -1,136 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Title</title>
+
+<style>
+
+/* =====================
+   FONTS
+===================== */
+@font-face {
+    font-family: 'anthony';
+    src: url('font/Anthony.woff') format('woff'),
+         url('font/Anthony.woff2') format('woff2');
+}
+
+/* =====================
+   GLOBAL LAYOUT
+===================== */
+body {
+    margin: 0;
+    height: 100vh;
+    width: 400vw;
+    background-image: url("web.jpg");
+    background-size: 100% 100%;
+}
+
+/* =====================
+   SLIDE SYSTEM
+===================== */
+.slide-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.slide1,
+.slide2,
+.slide3 {
+    width: 100vw;
+    position: relative;
+}
+
+/* =====================
+   SHARED ELEMENTS
+===================== */
+.fly {
+    position: absolute;
+    top: 60vh;
+    left: 60vw;
+    width: 200px;
+}
+
+/* =====================
+   SLIDE 1
+===================== */
+.slide1-content {
+    width: 50%;
+    margin-left: 35%;
+    margin-top: 200px;
+}
+
+.slide1-content p {
+    font-family: 'anthony', sans-serif;
+    font-size: 24px;
+}
+
+/* =====================
+   SLIDE 2
+===================== */
+.slide2-content {
+    width: 40%;
+    margin-left: 15%;
+    margin-top: 200px;
+}
+
+.slide2-content p {
+    font-family: 'anthony', sans-serif;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+/* =====================
+   SLIDE 3
+===================== */
+.slide3 h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="slide-container">
+<div class="slide-container">
 
-        <!-- SLIDE 1 -->
-        <div class="slide1">
-            <div class="slide1-content">
-                <p style="font-family: 'Helvetica', sans-serif; font-size: 24px;">
-                    press any
-                    <span style="font-size: 40px;">abcdefghijklmnopqrstuvwxyz</span>
-                    for sound
-                </p>
-            </div>
+    <!-- SLIDE 1 -->
+    <div class="slide1">
 
-            <audio id="bg-audio">
-                <source src="flytrap.mp3" type="audio/mpeg">
-            </audio>
-
-            <img class="fly" src="fly.gif">
+        <div class="slide1-content">
+            <p>
+                press any<br>
+                <span style="font-size: 40px;">abcdefghijklmnopqrstuvwxyz</span><br>
+                for sound
+            </p>
         </div>
 
-        <!-- SLIDE 2 -->
-        <div class="slide2">
-            <div class="slide2-content">
-                <p style="font-family: 'Helvetica', sans-serif; 24px; font-style: bold; color: white;">
-                    THE ONLY OTHER<br>
-                    WHO WILL EVER<br>
-                    KNOW ME<br>
-                    LIKE YOU DO<br>
-                    IS THE INSIDE<br>
-                    OF YOU<br>
-                    THAT HAS EATEN ME
-                </p>
-            </div>
+        <audio id="bg-audio">
+            <source src="flytrap.mp3" type="audio/mpeg">
+        </audio>
 
-            <img class="fly" src="fly.gif">
-        </div>
-
-        <!-- SLIDE 3 -->
-        <div class="slide3">
-            <h1><a href="index2.html">This link goes to page 2</a></h1>
-            <h2>secondary heading</h2>
-            <p>paragraph</p>
-        </div>
+        <img class="fly" src="fly.gif">
 
     </div>
 
+    <!-- SLIDE 2 -->
+    <div class="slide2">
+
+        <div class="slide2-content">
+            <p>
+                THE ONLY OTHER<br>
+                WHO WILL EVER<br>
+                KNOW ME<br>
+                LIKE YOU DO<br>
+                IS THE INSIDE<br>
+                OF YOU<br>
+                THAT HAS EATEN ME
+            </p>
+        </div>
+
+        <img class="fly" src="fly.gif">
+
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide3">
+
+        <h1>
+            <a href="index2.html">This link goes to page 2</a>
+        </h1>
+
+        <h2>secondary heading</h2>
+        <p>paragraph</p>
+
+    </div>
+
+</div>
+
 </body>
-
-<style>
-    .fly {
-        position: absolute;
-        top: 60vh;
-        left: 60vw;
-        width: 200px;
-    }
-
-    body {
-        background-image: url("web.jpg");
-        background-size: 100% 100%;
-        width: 400vw;
-        height: 100vh;
-        margin: 0;
-    }
-
-    .slide-container {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-    }
-
-    .slide1, .slide2, .slide3 {
-        width: 100vw;
-        position: relative;
-    }
-
-    .slide1-content {
-        width: 50%;
-        margin-left: 35%;
-        margin-top: 200px;
-    }
-
-    .slide2-content {
-        width: 40%;
-        margin-left: 15%;
-        margin-top: 200px;
-    }
-</style>
-
-<script>
-    // AUDIO TOGGLE
-    const audio = document.getElementById("bg-audio");
-
-    document.addEventListener("keydown", function () {
-        if (audio.paused) {
-            audio.play().catch(err => console.log("Playback failed:", err));
-        } else {
-            audio.pause();
-        }
-    });
-
-    // AUTO SCROLL
-    let scrollSpeed = 1;
-    let isScrolling = true;
-    let lastTime = 0;
-    let delay = 25;
-
-    function autoScroll(timestamp) {
-        if (isScrolling) {
-            if (timestamp - lastTime > delay) {
-                window.scrollBy(scrollSpeed, 0);
-                lastTime = timestamp;
-            }
-            requestAnimationFrame(autoScroll);
-        }
-    }
-
-    window.onload = () => {
-        requestAnimationFrame(autoScroll);
-    };
-
-    window.addEventListener('click', () => {
-        isScrolling = !isScrolling;
-        if (isScrolling) requestAnimationFrame(autoScroll);
-    });
-</script>
-
 </html>
