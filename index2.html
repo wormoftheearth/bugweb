@@ -28,7 +28,7 @@ body {
 }
 
 /* =====================
-   SLIDE SYSTEM
+   SLIDES
 ===================== */
 .slide-container {
     display: flex;
@@ -54,37 +54,21 @@ body {
 }
 
 /* =====================
-   SLIDE 1
+   TEXT
 ===================== */
-.slide1-content {
-    width: 50%;
-    margin-left: 35%;
-    margin-top: 200px;
-}
-
-.slide1-content p {
-    font-family: 'helvetica', sans-serif;
+.slide1-content p,
+.slide2-content p {
+    font-family: Helvetica, sans-serif;
     font-size: 24px;
-}
-
-/* =====================
-   SLIDE 2
-===================== */
-.slide2-content {
-    width: 40%;
-    margin-left: 15%;
-    margin-top: 200px;
 }
 
 .slide2-content p {
-    font-family: 'helvetica', sans-serif;
-    font-size: 24px;
     color: white;
     font-weight: bold;
 }
 
 /* =====================
-   SLIDE 3
+   LINKS
 ===================== */
 .slide3 h1 a {
     color: white;
@@ -149,6 +133,35 @@ body {
     </div>
 
 </div>
+
+<!-- =====================
+     JAVASCRIPT (FIXED)
+===================== -->
+<script>
+let scrollSpeed = 1;
+let isScrolling = true;
+let lastTime = 0;
+let delay = 25;
+
+function autoScroll(timestamp) {
+    if (isScrolling) {
+        if (timestamp - lastTime > delay) {
+            window.scrollBy(scrollSpeed, 0);
+            lastTime = timestamp;
+        }
+        requestAnimationFrame(autoScroll);
+    }
+}
+
+window.onload = () => {
+    requestAnimationFrame(autoScroll);
+};
+
+window.addEventListener('click', () => {
+    isScrolling = !isScrolling;
+    if (isScrolling) requestAnimationFrame(autoScroll);
+});
+</script>
 
 </body>
 </html>
