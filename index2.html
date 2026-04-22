@@ -140,26 +140,21 @@ body {
 <script>
 let scrollSpeed = 1;
 let isScrolling = true;
-let lastTime = 0;
-let delay = 25;
 
-function autoScroll(timestamp) {
+function autoScroll() {
     if (isScrolling) {
-        if (timestamp - lastTime > delay) {
-            window.scrollBy(scrollSpeed, 0);
-            lastTime = timestamp;
-        }
-        requestAnimationFrame(autoScroll);
+        window.scrollBy(scrollSpeed, 0);
     }
+    requestAnimationFrame(autoScroll);
 }
 
-window.onload = () => {
+window.addEventListener("load", () => {
     requestAnimationFrame(autoScroll);
-};
+});
 
-window.addEventListener('click', () => {
+// click to pause/resume
+window.addEventListener("click", () => {
     isScrolling = !isScrolling;
-    if (isScrolling) requestAnimationFrame(autoScroll);
 });
 </script>
 
