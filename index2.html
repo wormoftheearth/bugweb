@@ -3,117 +3,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<html style="background-attachment: scroll; background-image: url(webby.jpg); background-position: -529px -1078px;">
-<head>
 <title>start</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    min-width: 5500px;
+    height: 100vh;
+
+    background-image: url("webby.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    overflow-y: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* Fly */
+.fly {
+    width: 200px;
+}
+
+/* Text */
+.text {
+    position: absolute;
+    color: white;
+    z-index: 100;
+}
+</style>
+</head>
+
+<body id="start.head" class="page">
+
+    <!-- FLY + AUDIO -->
+    <div
+        class="text"
+        style="
+            left: 378px;
+            top: 107px;
+            width: 185px;
+            height: 77px;
+            font-size: 22px;
+        "
+    >
+        <img class="fly" src="fly.gif">
+
+        <audio id="backgroundAudio" autoplay loop>
+            <source src="flytrap.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+
+    <!-- TEXT 1 -->
+    <div
+        class="text"
+        style="
+            left: 561px;
+            top: 275px;
+            width: 574px;
+            height: 464px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        I REMEMBER THE SOUND<br>
+        <br>
+        BUZZING<br>
+        <br>
+        IN AND OUT OF BOTH MY EARS
+    </div>
+
+
+    <!-- TEXT 2 -->
+    <div
+        class="text"
+        style="
+            left: 1438px;
+            top: 225px;
+            width: 574px;
+            height: 464px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        16 ANGLED<br>
+        THICK LEGS<br>
+        <br>
+        WRAPPED<br>
+        AND WRAPPED<br>
+        AND WRAPPED YOU<br>
+        <br>
+        YOUR CONSISTENT BUZZING<br>
+        GETTING QUIETER WITH EACH<br>
+        STICKY, FUZZY, LAYER OF WHITE ROPE<br>
+        TYING YOU TIGHTLY
+    </div>
+
+
+    <!-- TEXT 3 -->
+    <div
+        class="text"
+        style="
+            left: 2350px;
+            top: 272px;
+            width: 519px;
+            height: 435px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        16 ANGLED<br>
+        THICK LEGS<br>
+        <br>
+        WRAPPED<br>
+        AND WRAPPED<br>
+        AND WRAPPED YOU<br>
+        <br>
+        YOUR CONSISTENT BUZZING<br>
+        GETTING QUIETER WITH EACH<br>
+        STICKY, FUZZY, LAYER OF WHITE ROPE<br>
+        TYING YOU TIGHTLY
+    </div>
+
+
+    <!-- TEXT 4 -->
+    <div
+        class="text"
+        style="
+            left: 3100px;
+            top: 115px;
+            width: 315px;
+            height: 464px;
+            font-size: 23px;
+            line-height: 1.24481em;
+            text-align: justify;
+        "
+    >
+        SUDDENLY STOPPING<br>
+        SEEING YOUR BODY<br>
+        <br>
+        <br>
+        STICKY<br>
+        BOUNCING IN THE WEB
+    </div>
+
+
+    <!-- TEXT 5 -->
+    <div
+        class="text"
+        style="
+            left: 4007px;
+            top: 322px;
+            width: 523px;
+            height: 224px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        THE SAME SIXTEEN LEGS<br>
+        CARRIED YOU<br>
+        AWAY<br>
+        <br>
+        I WAITED UNTIL YOUR BUZZING STOPPED
+    </div>
+
+
+    <!-- TEXT 6 -->
+    <div
+        class="text"
+        style="
+            left: 4844px;
+            top: 261px;
+            width: 466px;
+            height: 473px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        THE ONLY OTHER<br>
+        WHO WILL EVER<br>
+        KNOW ME<br>
+        <br>
+        LIKE YOU DO<br>
+        <br>
+        IS THE INSIDE<br>
+        OF YOU<br>
+        <br>
+        THAT HAS EATEN ME
+    </div>
+
+
 <script>
 let scrollX = 0;
-let isScrolling = true
-const scrollSpeed = 0.5; // Adjust for slower/faster scroll
+let isScrolling = true;
+const scrollSpeed = 0.5;
 
+let lastTime = performance.now();
 
-let scrollInterval; // = setInterval(scrollPage, 20);
+function scrollPage(currentTime) {
+    if (!isScrolling) {
+        lastTime = currentTime;
+        requestAnimationFrame(scrollPage);
+        return;
+    }
 
+    const deltaTime = currentTime - lastTime;
+    lastTime = currentTime;
 
-function scrollPage() {
-scrollX += scrollSpeed;
-window.scrollTo(scrollX, 0);
-// console.log(scrollX)
+    scrollX += scrollSpeed * (deltaTime / 16.67);
 
+    const maxScroll =
+        document.documentElement.scrollWidth - window.innerWidth;
 
-// Stop scrolling when the bottom of the page is reached
-if (scrollX >= document.documentElement.scrollWidth - window.innerWidth) {
-clearInterval(scrollInterval);
+    if (scrollX >= maxScroll) {
+        scrollX = maxScroll;
+        isScrolling = false;
+    }
+
+    window.scrollTo(scrollX, 0);
+
+    requestAnimationFrame(scrollPage);
 }
-}
+
+requestAnimationFrame(scrollPage);
 
 
-// Optional: stop/start scrolling on click
-window.addEventListener('click', () => {
-isScrolling = !isScrolling;
-if (isScrolling) {
-scrollInterval = setInterval(scrollPage, 20); // scrollPage();
-} else {
-clearInterval(scrollInterval)
-}
+/* Click anywhere to pause / resume */
+window.addEventListener("click", () => {
+    isScrolling = !isScrolling;
 });
-
-
-
-
-scrollInterval = setInterval(scrollPage, 20);
-
-
 </script>
-</head>
-<body id="start.head" class="page">
-	<div id="start.head.174595316337" class="text resizable object" style="background-color: transparent; color: rgb(254, 251, 251); font-family: Arial, Helvetica, sans-serif; font-size: 22px; height: 77px; left: 378px; line-height: 1.13212em; position: absolute; top: 107px; width: 185px; z-index: 100;">
-		 <img class="fly" src="fly.gif">
 
-        <audio autoplay>
-        <source src="flytrap.mp3" type="audio/mpeg">
-        </audio>
-	</div>
-	<div id="start.head.174595394125" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 464px; left: 561px; line-height: 1.69852em; position: absolute; text-align: center; top: 275px; width: 574px; z-index: 100;">
-		        I REMEMBER THE SOUND<br>
-                <br>
-                BUZZING<br>
-                <br>
-                IN AND OUT OF BOTH MY EARS
-	</div>
-	<div id="start.head.174595489940" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 23px; height: 83px; left: 3100px; line-height: 1.24481em; position: absolute; text-align: justify; top: 115px; width: 315px; z-index: 100;">
-		        SUDDENLY STOPPING <br>
-                SEEING YOUR BODY <br>
-                <br>
-                <br> STICKY
-                <by>
-                BOUNCING IN THE WEB </div>
-	<div id="start.head.174595535971" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 464px; left: 1438px; line-height: 1.69852em; position: absolute; text-align: center; top: 225px; width: 574px; z-index: 100;">
-			    16 ANGLED <br>
-                THICK LEGS <br>
-                <br>
-                WRAPPED <br>
-                AND WRAPPED <br>
-                AND WRAPPED YOU <br>
-                <br> 
-                <br> YOUR CONSISTENT BUZZING <br>
-                GETTING QUIETER WITH EACH <br>
-                STICKY, FUZZY, LAYER OF WHITE ROPE <br>
-                TYING YOU TIGHTLY <br>
-            </div>
-	<div id="start.head.174595555418" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 435px; left: 2350px; line-height: 1.69852em; position: absolute; text-align: center; top: 272px; width: 519px; z-index: 100;">
-		        16 ANGLED <br>
-                THICK LEGS <br>
-                <br>
-                WRAPPED <br>
-                AND WRAPPED <br>
-                AND WRAPPED YOU <br>
-                <br> 
-                <br> YOUR CONSISTENT BUZZING <br>
-                GETTING QUIETER WITH EACH <br>
-                STICKY, FUZZY, LAYER OF WHITE ROPE <br>
-                TYING YOU TIGHTLY<br>
-            </div>
-	<div id="start.head.174595560964" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 224px; left: 4007px; line-height: 1.69852em; position: absolute; text-align: center; top: 322px; width: 523px; z-index: 100;">
-		        THE SAME SIXTEEN LEGS<br>
-                CARRIED YOU<br>
-                AWAY<br>
-                <br>
-                I WAITED UNTIL YOUR BUZZING STOPPED<br>
-            </div>
-	<div id="start.head.174595572295" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 473px; left: 4844px; line-height: 1.69852em; position: absolute; text-align: center; top: 261px; width: 466px; z-index: 100;">
-		        THE ONLY OTHER<br>
-                WHO WILL EVER<br>
-                KNOW ME<br>
-                <br>
-                LIKE YOU DO<br>
-                <br>
-                IS THE INSIDE<br>
-                OF YOU<br>
-                <br>
-                THAT HAS EATEN ME<br>
-            </div>
 </body>
 </html>
