@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,28 +6,43 @@
 <title>start</title>
 
 <style>
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
+/* The browser viewport */
 body {
+    overflow: hidden;
+
+    font-family: monospace, sans-serif;
+    color: black;
+}
+
+/* The window you look through */
+.viewport {
     position: relative;
-    min-width: 5500px;
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* The actual giant horizontal canvas */
+.canvas {
+    position: relative;
+
+    width: 5500px;
     height: 100vh;
 
     background-image: url("webby.jpg");
     background-repeat: repeat;
     background-position: center top;
     background-size: cover;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    font-family: monospace, sans-serif;
-    color: black;
 }
 
 /* Fly */
@@ -47,167 +61,181 @@ body {
 
 <body id="start.head" class="page">
 
-    <!-- FLY + AUDIO -->
-    <div
-        class="text"
-        style="
-            left: 378px;
-            top: 107px;
-            width: 185px;
-            height: 77px;
-            font-size: 22px;
-        "
-    >
-        <img class="fly" src="fly.gif">
+    <!-- VIEWPORT -->
+    <div class="viewport">
 
-        <audio id="backgroundAudio" autoplay loop>
-            <source src="flytrap.mp3" type="audio/mpeg">
-        </audio>
+        <!-- GIANT HORIZONTAL CANVAS -->
+        <div class="canvas">
+
+
+            <!-- FLY + AUDIO -->
+            <div
+                class="text"
+                style="
+                    left: 378px;
+                    top: 107px;
+                    width: 185px;
+                    height: 77px;
+                    font-size: 22px;
+                "
+            >
+                <img class="fly" src="fly.gif">
+
+                <audio id="backgroundAudio" autoplay loop>
+                    <source src="flytrap.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+
+            <!-- TEXT 1 -->
+            <div
+                class="text"
+                style="
+                    left: 561px;
+                    top: 275px;
+                    width: 574px;
+                    height: 464px;
+                    font-size: 18px;
+                    line-height: 1.69852em;
+                    text-align: center;
+                "
+            >
+                I REMEMBER THE SOUND<br>
+                <br>
+                BUZZING<br>
+                <br>
+                IN AND OUT OF BOTH MY EARS
+            </div>
+
+
+            <!-- TEXT 2 -->
+            <div
+                class="text"
+                style="
+                    left: 1438px;
+                    top: 225px;
+                    width: 574px;
+                    height: 464px;
+                    font-size: 18px;
+                    line-height: 1.69852em;
+                    text-align: center;
+                "
+            >
+                16 ANGLED<br>
+                THICK LEGS<br>
+                <br>
+                WRAPPED<br>
+                AND WRAPPED<br>
+                AND WRAPPED YOU<br>
+                <br>
+                YOUR CONSISTENT BUZZING<br>
+                GETTING QUIETER WITH EACH<br>
+                STICKY, FUZZY, LAYER OF WHITE ROPE<br>
+                TYING YOU TIGHTLY
+            </div>
+
+
+            <!-- TEXT 3 -->
+            <div
+                class="text"
+                style="
+                    left: 2350px;
+                    top: 272px;
+                    width: 519px;
+                    height: 435px;
+                    font-size: 18px;
+                    line-height: 1.69852em;
+                    text-align: center;
+                "
+            >
+                16 ANGLED<br>
+                THICK LEGS<br>
+                <br>
+                WRAPPED<br>
+                AND WRAPPED<br>
+                AND WRAPPED YOU<br>
+                <br>
+                YOUR CONSISTENT BUZZING<br>
+                GETTING QUIETER WITH EACH<br>
+                STICKY, FUZZY, LAYER OF WHITE ROPE<br>
+                TYING YOU TIGHTLY
+            </div>
+
+
+            <!-- TEXT 4 -->
+            <div
+                class="text"
+                style="
+                    left: 3100px;
+                    top: 115px;
+                    width: 315px;
+                    height: 464px;
+                    font-size: 23px;
+                    line-height: 1.24481em;
+                    text-align: justify;
+                "
+            >
+                SUDDENLY STOPPING<br>
+                SEEING YOUR BODY<br>
+                <br>
+                <br>
+                STICKY<br>
+                BOUNCING IN THE WEB
+            </div>
+
+
+            <!-- TEXT 5 -->
+            <div
+                class="text"
+                style="
+                    left: 4007px;
+                    top: 322px;
+                    width: 523px;
+                    height: 224px;
+                    font-size: 18px;
+                    line-height: 1.69852em;
+                    text-align: center;
+                "
+            >
+                THE SAME SIXTEEN LEGS<br>
+                CARRIED YOU<br>
+                AWAY<br>
+                <br>
+                I WAITED UNTIL YOUR BUZZING STOPPED
+            </div>
+
+
+            <!-- TEXT 6 -->
+            <div
+                class="text"
+                style="
+                    left: 4844px;
+                    top: 261px;
+                    width: 466px;
+                    height: 473px;
+                    font-size: 18px;
+                    line-height: 1.69852em;
+                    text-align: center;
+                "
+            >
+                THE ONLY OTHER<br>
+                WHO WILL EVER<br>
+                KNOW ME<br>
+                <br>
+                LIKE YOU DO<br>
+                <br>
+                IS THE INSIDE<br>
+                OF YOU<br>
+                <br>
+                THAT HAS EATEN ME
+            </div>
+
+
+        </div>
+        <!-- END CANVAS -->
+
     </div>
-
-
-    <!-- TEXT 1 -->
-    <div
-        class="text"
-        style="
-            left: 561px;
-            top: 275px;
-            width: 574px;
-            height: 464px;
-            font-size: 18px;
-            line-height: 1.69852em;
-            text-align: center;
-        "
-    >
-        I REMEMBER THE SOUND<br>
-        <br>
-        BUZZING<br>
-        <br>
-        IN AND OUT OF BOTH MY EARS
-    </div>
-
-
-    <!-- TEXT 2 -->
-    <div
-        class="text"
-        style="
-            left: 1438px;
-            top: 225px;
-            width: 574px;
-            height: 464px;
-            font-size: 18px;
-            line-height: 1.69852em;
-            text-align: center;
-        "
-    >
-        16 ANGLED<br>
-        THICK LEGS<br>
-        <br>
-        WRAPPED<br>
-        AND WRAPPED<br>
-        AND WRAPPED YOU<br>
-        <br>
-        YOUR CONSISTENT BUZZING<br>
-        GETTING QUIETER WITH EACH<br>
-        STICKY, FUZZY, LAYER OF WHITE ROPE<br>
-        TYING YOU TIGHTLY
-    </div>
-
-
-    <!-- TEXT 3 -->
-    <div
-        class="text"
-        style="
-            left: 2350px;
-            top: 272px;
-            width: 519px;
-            height: 435px;
-            font-size: 18px;
-            line-height: 1.69852em;
-            text-align: center;
-        "
-    >
-        16 ANGLED<br>
-        THICK LEGS<br>
-        <br>
-        WRAPPED<br>
-        AND WRAPPED<br>
-        AND WRAPPED YOU<br>
-        <br>
-        YOUR CONSISTENT BUZZING<br>
-        GETTING QUIETER WITH EACH<br>
-        STICKY, FUZZY, LAYER OF WHITE ROPE<br>
-        TYING YOU TIGHTLY
-    </div>
-
-
-    <!-- TEXT 4 -->
-    <div
-        class="text"
-        style="
-            left: 3100px;
-            top: 115px;
-            width: 315px;
-            height: 464px;
-            font-size: 23px;
-            line-height: 1.24481em;
-            text-align: justify;
-        "
-    >
-        SUDDENLY STOPPING<br>
-        SEEING YOUR BODY<br>
-        <br>
-        <br>
-        STICKY<br>
-        BOUNCING IN THE WEB
-    </div>
-
-
-    <!-- TEXT 5 -->
-    <div
-        class="text"
-        style="
-            left: 4007px;
-            top: 322px;
-            width: 523px;
-            height: 224px;
-            font-size: 18px;
-            line-height: 1.69852em;
-            text-align: center;
-        "
-    >
-        THE SAME SIXTEEN LEGS<br>
-        CARRIED YOU<br>
-        AWAY<br>
-        <br>
-        I WAITED UNTIL YOUR BUZZING STOPPED
-    </div>
-
-
-    <!-- TEXT 6 -->
-    <div
-        class="text"
-        style="
-            left: 4844px;
-            top: 261px;
-            width: 466px;
-            height: 473px;
-            font-size: 18px;
-            line-height: 1.69852em;
-            text-align: center;
-        "
-    >
-        THE ONLY OTHER<br>
-        WHO WILL EVER<br>
-        KNOW ME<br>
-        <br>
-        LIKE YOU DO<br>
-        <br>
-        IS THE INSIDE<br>
-        OF YOU<br>
-        <br>
-        THAT HAS EATEN ME
-    </div>
+    <!-- END VIEWPORT -->
 
 
 <script>
@@ -221,18 +249,22 @@ function scrollPage(currentTime) {
     lastTime = currentTime;
 
     if (isScrolling) {
+
+        const viewport = document.querySelector(".viewport");
+
         const maxScroll =
-            document.documentElement.scrollWidth - window.innerWidth;
+            viewport.scrollWidth - viewport.clientWidth;
 
         let newScrollX =
-            window.scrollX + scrollSpeed * (deltaTime / 16.67);
+            viewport.scrollLeft +
+            scrollSpeed * (deltaTime / 16.67);
 
         if (newScrollX >= maxScroll) {
             newScrollX = maxScroll;
             isScrolling = false;
         }
 
-        window.scrollTo(newScrollX, 0);
+        viewport.scrollLeft = newScrollX;
     }
 
     requestAnimationFrame(scrollPage);
