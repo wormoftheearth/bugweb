@@ -7,11 +7,10 @@
 
 <style>
 
-
 body {
     margin: 0;
     height: 100vh;
-    width: 800vw;
+    width: 900vw;
 
     background-image: url("webby.jpg");
     background-size: cover;
@@ -25,7 +24,14 @@ body {
 .slide-container {
     display: flex;
     flex-direction: row;
-    position: relative;
+    width: 900vw;
+    height: 100vh;
+}
+
+.slide {
+    width: 150vw;
+    height: 100vh;
+    flex-shrink: 0;
 }
 
 .fly {
@@ -34,10 +40,6 @@ body {
     left: 60vw;
     width: 200px;
 }
-</style>
-</head>
-
-<body>
 
 <div class="slide-container">
 
