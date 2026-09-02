@@ -1,197 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Title</title>
-
+<title>start</title>
 
 <style>
-
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
 
 body {
-   margin: 0;
-   height: 100vh;
-   width: 900vw;
+    position: relative;
+    min-width: 5500px;
+    height: 100vh;
 
+    background-image: url("webby.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
 
-   background-image: url("web.jpg");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
+    overflow-y: hidden;
 
-
-   font-family: monospace, sans-serif;
-   font-size: 30px;
+    font-family: monospace, sans-serif;
+    color: black;
 }
 
-
-.slide-container {
-   display: flex;
-   flex-direction: row;
-   width: 900vw;
-   height: 100vh;
-}
-
-
-.slide {
-   width: 150vw;
-   height: 100vh;
-   flex-shrink: 0;
-}
-
-
+/* Fly */
 .fly {
-   position: absolute;
-   top: 60vh;
-   left: 60vw;
-   width: 200px;
+    width: 200px;
 }
 
+/* Text */
+.text {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    z-index: 100;
+}
+</style>
+</head>
 
-<div class="slide-container">
+<body id="start.head" class="page">
 
+    <!-- FLY + AUDIO -->
+    <div
+        class="text"
+        style="
+            left: 378px;
+            top: 107px;
+            width: 185px;
+            height: 77px;
+            font-size: 22px;
+        "
+    >
+        <img class="fly" src="fly.gif">
 
-   <!-- SLIDE 1 -->
-   <div class="slide1">
-
-
-       <div class="slide1-content">
-           <p>
-               <br>
-      
-           </p>
-       </div>
-
-
-
-
-       <img class="fly" src="fly.gif">
-
-
-       <audio autoplay>
-       <source src="flytrap.mp3" type="audio/mpeg">
-       </audio>
-
-
-   </div>
-
-
-     <div class="slide2">
+        <audio id="backgroundAudio" autoplay loop>
+            <source src="flytrap.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
 
-       <div class="slide2-content">
-           <p>
-               I REMEMBER THE SOUND<BR>
-               <br>
-               BUZZING <BR>
-                <BR>
-               IN AND OUT OF BOTH MY EARS
-           </p>
-       </div>
-   </div>
+    <!-- TEXT 1 -->
+    <div
+        class="text"
+        style="
+            left: 561px;
+            top: 275px;
+            width: 574px;
+            height: 464px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        I REMEMBER THE SOUND<br>
+        <br>
+        BUZZING<br>
+        <br>
+        IN AND OUT OF BOTH MY EARS
+    </div>
 
 
-        <div class="slide3">
+    <!-- TEXT 2 -->
+    <div
+        class="text"
+        style="
+            left: 1438px;
+            top: 225px;
+            width: 574px;
+            height: 464px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        16 ANGLED<br>
+        THICK LEGS<br>
+        <br>
+        WRAPPED<br>
+        AND WRAPPED<br>
+        AND WRAPPED YOU<br>
+        <br>
+        YOUR CONSISTENT BUZZING<br>
+        GETTING QUIETER WITH EACH<br>
+        STICKY, FUZZY, LAYER OF WHITE ROPE<br>
+        TYING YOU TIGHTLY
+    </div>
 
 
-       <div class="slide3-content">
-           <p>
-               SUDDENLY STOPPING <br>
-               SEEING YOUR BODY <br>
-               <BR>
-               <BR> STICK
-               <BR>
-               BOUNCING IN THE WEB
-           </p>
-       </div>
-   </div>
+    <!-- TEXT 3 -->
+    <div
+        class="text"
+        style="
+            left: 2350px;
+            top: 272px;
+            width: 519px;
+            height: 435px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        16 ANGLED<br>
+        THICK LEGS<br>
+        <br>
+        WRAPPED<br>
+        AND WRAPPED<br>
+        AND WRAPPED YOU<br>
+        <br>
+        YOUR CONSISTENT BUZZING<br>
+        GETTING QUIETER WITH EACH<br>
+        STICKY, FUZZY, LAYER OF WHITE ROPE<br>
+        TYING YOU TIGHTLY
+    </div>
 
 
-            <div class="slide4">
+    <!-- TEXT 4 -->
+    <div
+        class="text"
+        style="
+            left: 3100px;
+            top: 115px;
+            width: 315px;
+            height: 464px;
+            font-size: 23px;
+            line-height: 1.24481em;
+            text-align: justify;
+        "
+    >
+        SUDDENLY STOPPING<br>
+        SEEING YOUR BODY<br>
+        <br>
+        <br>
+        STICKY<br>
+        BOUNCING IN THE WEB
+    </div>
 
 
-       <div class="slide4-content">
-           <p>
-               16 ANGLED <BR>
-               THICK LEGS
-               <BR>
-               WRAPPED <br>
-               AND WRAPPED <br>
-               AND WRAPPED YOU <br>
-               <BR>
-               <BR> YOUR CONSISTENT BUZZING <BR>
-               GETTING QUIETER WITH EACH <BR>
-               STICKY, FUZZY, LAYER OF WHITE ROPE <BR>
-               TYING YOU TIGHTLY
-           </p>
-       </div>
-   </div>
-  
-                <div class="slide5">
+    <!-- TEXT 5 -->
+    <div
+        class="text"
+        style="
+            left: 4007px;
+            top: 322px;
+            width: 523px;
+            height: 224px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        THE SAME SIXTEEN LEGS<br>
+        CARRIED YOU<br>
+        AWAY<br>
+        <br>
+        I WAITED UNTIL YOUR BUZZING STOPPED
+    </div>
 
 
-       <div class="slide5-content">
-           <p>
-               THE SAME SIXTEEN LEGS<br>
-               CARRIED YOU<br>
-               AWAY<br>
-               <BR>
-               I WAITED UNTIL YOUR BUZZING STOPPED<br>
+    <!-- TEXT 6 -->
+    <div
+        class="text"
+        style="
+            left: 4844px;
+            top: 261px;
+            width: 466px;
+            height: 473px;
+            font-size: 18px;
+            line-height: 1.69852em;
+            text-align: center;
+        "
+    >
+        THE ONLY OTHER<br>
+        WHO WILL EVER<br>
+        KNOW ME<br>
+        <br>
+        LIKE YOU DO<br>
+        <br>
+        IS THE INSIDE<br>
+        OF YOU<br>
+        <br>
+        THAT HAS EATEN ME
+    </div>
 
 
-           </p>
-       </div>
-   </div>
-
-
-            <div class="slide6">
-
-
-       <div class="slide6-content">
-           <p>
-               THE ONLY OTHER<br>
-               WHO WILL EVER<br>
-               KNOW ME<br>
-               <BR>
-               LIKE YOU DO<br>
-               <BR>
-               IS THE INSIDE<br>
-               OF YOU<br>
-               <BR>
-               THAT HAS EATEN ME
-           </p>
-       </div>
-   </div>
-
-
-<!-- =====================
-    JAVASCRIPT (FIXED)
-===================== -->
 <script>
-let scrollSpeed = 1;
+let scrollX = 0;
 let isScrolling = true;
+const scrollSpeed = 0.5;
 
+let lastTime = performance.now();
 
-function autoScroll() {
-   if (isScrolling) {
-       window.scrollBy(scrollSpeed, 0);
-   }
-   requestAnimationFrame(autoScroll);
+function scrollPage(currentTime) {
+    if (!isScrolling) {
+        lastTime = currentTime;
+        requestAnimationFrame(scrollPage);
+        return;
+    }
+
+    const deltaTime = currentTime - lastTime;
+    lastTime = currentTime;
+
+    scrollX += scrollSpeed * (deltaTime / 16.67);
+
+    const maxScroll =
+        document.documentElement.scrollWidth - window.innerWidth;
+
+    if (scrollX >= maxScroll) {
+        scrollX = maxScroll;
+        isScrolling = false;
+    }
+
+    window.scrollTo(scrollX, 0);
+
+    requestAnimationFrame(scrollPage);
 }
 
-
-window.addEventListener("load", () => {
-   requestAnimationFrame(autoScroll);
-});
+requestAnimationFrame(scrollPage);
 
 
-// click to pause/resume
+/* Click anywhere to pause / resume */
 window.addEventListener("click", () => {
-   isScrolling = !isScrolling;
+    isScrolling = !isScrolling;
 });
 </script>
-
 
 </body>
 </html>
