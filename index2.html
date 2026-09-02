@@ -20,10 +20,11 @@ body {
     height: 100vh;
 
     background-image: url("webby.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center top;
     background-size: cover;
 
+    overflow-x: auto;
     overflow-y: hidden;
 
     font-family: monospace, sans-serif;
@@ -210,33 +211,29 @@ body {
 
 
 <script>
-let scrollX = 0;
 let isScrolling = true;
 const scrollSpeed = 0.5;
 
 let lastTime = performance.now();
 
 function scrollPage(currentTime) {
-    if (!isScrolling) {
-        lastTime = currentTime;
-        requestAnimationFrame(scrollPage);
-        return;
-    }
-
     const deltaTime = currentTime - lastTime;
     lastTime = currentTime;
 
-    scrollX += scrollSpeed * (deltaTime / 16.67);
+    if (isScrolling) {
+        const maxScroll =
+            document.documentElement.scrollWidth - window.innerWidth;
 
-    const maxScroll =
-        document.documentElement.scrollWidth - window.innerWidth;
+        let newScrollX =
+            window.scrollX + scrollSpeed * (deltaTime / 16.67);
 
-    if (scrollX >= maxScroll) {
-        scrollX = maxScroll;
-        isScrolling = false;
+        if (newScrollX >= maxScroll) {
+            newScrollX = maxScroll;
+            isScrolling = false;
+        }
+
+        window.scrollTo(newScrollX, 0);
     }
-
-    window.scrollTo(scrollX, 0);
 
     requestAnimationFrame(scrollPage);
 }
@@ -244,7 +241,7 @@ function scrollPage(currentTime) {
 requestAnimationFrame(scrollPage);
 
 
-/* Click anywhere to pause / resume */
+// Click anywhere to pause / resume
 window.addEventListener("click", () => {
     isScrolling = !isScrolling;
 });
