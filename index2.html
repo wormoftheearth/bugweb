@@ -3,166 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Title</title>
 
-<style>
+<html style="background-attachment: scroll; background-image: url(webby.jpg); background-position: -529px -1078px;">
+<head>
+<title>start</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+let scrollX = 0;
+let isScrolling = true
+const scrollSpeed = 0.5; // Adjust for slower/faster scroll
 
-body {
-    margin: 0;
-    height: 100vh;
-    width: 900vw;
 
-    background-image: url("webby.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+let scrollInterval; // = setInterval(scrollPage, 20);
 
-    font-family: monospace, sans-serif;
-    font-size: 30px;
+
+function scrollPage() {
+scrollX += scrollSpeed;
+window.scrollTo(scrollX, 0);
+// console.log(scrollX)
+
+
+// Stop scrolling when the bottom of the page is reached
+if (scrollX >= document.documentElement.scrollWidth - window.innerWidth) {
+clearInterval(scrollInterval);
+}
 }
 
-.slide-container {
-    display: flex;
-    flex-direction: row;
-    width: 900vw;
-    height: 100vh;
+
+// Optional: stop/start scrolling on click
+window.addEventListener('click', () => {
+isScrolling = !isScrolling;
+if (isScrolling) {
+scrollInterval = setInterval(scrollPage, 20); // scrollPage();
+} else {
+clearInterval(scrollInterval)
 }
-
-.slide {
-    width: 150vw;
-    height: 100vh;
-    flex-shrink: 0;
-}
-
-.fly {
-    position: absolute;
-    top: 60vh;
-    left: 60vw;
-    width: 200px;
-}
-
-<div class="slide-container">
-
-    <!-- SLIDE 1 -->
-    <div class="slide1">
-
-        <div class="slide1-content">
-            <p>
-                <br>
-        
-            </p>
-        </div>
+});
 
 
-        <img class="fly" src="fly.gif">
+
+
+scrollInterval = setInterval(scrollPage, 20);
+
+
+</script>
+</head>
+<body id="start.head" class="page">
+	<div id="start.head.174595316337" class="text resizable object" style="background-color: transparent; color: rgb(254, 251, 251); font-family: Arial, Helvetica, sans-serif; font-size: 22px; height: 77px; left: 378px; line-height: 1.13212em; position: absolute; top: 107px; width: 185px; z-index: 100;">
+		 <img class="fly" src="fly.gif">
 
         <audio autoplay>
         <source src="flytrap.mp3" type="audio/mpeg">
         </audio>
-
-    </div>
-
-      <div class="slide2">
-
-        <div class="slide2-content">
-            <p>
-                I REMEMBER THE SOUND<BR>
+	</div>
+	<div id="start.head.174595394125" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 464px; left: 561px; line-height: 1.69852em; position: absolute; text-align: center; top: 275px; width: 574px; z-index: 100;">
+		        I REMEMBER THE SOUND<br>
                 <br>
-                BUZZING <BR>
-                 <BR>
+                BUZZING<br>
+                <br>
                 IN AND OUT OF BOTH MY EARS
-            </p>
-        </div>
-    </div>
-
-         <div class="slide3">
-
-        <div class="slide3-content">
-            <p>
-                SUDDENLY STOPPING <br>
+	</div>
+	<div id="start.head.174595489940" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 23px; height: 83px; left: 3100px; line-height: 1.24481em; position: absolute; text-align: justify; top: 115px; width: 315px; z-index: 100;">
+		        SUDDENLY STOPPING <br>
                 SEEING YOUR BODY <br>
-                <BR>
-                <BR> STICK
-                <BR>
-                BOUNCING IN THE WEB 
-            </p>
-        </div>
-    </div>
-
-             <div class="slide4">
-
-        <div class="slide4-content">
-            <p>
-                16 ANGLED <BR>
-                THICK LEGS 
-                <BR>
+                <br>
+                <br> STICKY
+                <by>
+                BOUNCING IN THE WEB </div>
+	<div id="start.head.174595535971" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 464px; left: 1438px; line-height: 1.69852em; position: absolute; text-align: center; top: 225px; width: 574px; z-index: 100;">
+			    16 ANGLED <br>
+                THICK LEGS <br>
+                <br>
                 WRAPPED <br>
                 AND WRAPPED <br>
                 AND WRAPPED YOU <br>
-                <BR> 
-                <BR> YOUR CONSISTENT BUZZING <BR>
-                GETTING QUIETER WITH EACH <BR>
-                STICKY, FUZZY, LAYER OF WHITE ROPE <BR>
-                TYING YOU TIGHTLY 
-            </p>
-        </div>
-    </div>
-    
-                 <div class="slide5">
-
-        <div class="slide5-content">
-            <p>
-                THE SAME SIXTEEN LEGS<br>
+                <br> 
+                <br> YOUR CONSISTENT BUZZING <br>
+                GETTING QUIETER WITH EACH <br>
+                STICKY, FUZZY, LAYER OF WHITE ROPE <br>
+                TYING YOU TIGHTLY <br>
+            </div>
+	<div id="start.head.174595555418" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 435px; left: 2350px; line-height: 1.69852em; position: absolute; text-align: center; top: 272px; width: 519px; z-index: 100;">
+		        16 ANGLED <br>
+                THICK LEGS <br>
+                <br>
+                WRAPPED <br>
+                AND WRAPPED <br>
+                AND WRAPPED YOU <br>
+                <br> 
+                <br> YOUR CONSISTENT BUZZING <br>
+                GETTING QUIETER WITH EACH <br>
+                STICKY, FUZZY, LAYER OF WHITE ROPE <br>
+                TYING YOU TIGHTLY<br>
+            </div>
+	<div id="start.head.174595560964" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 224px; left: 4007px; line-height: 1.69852em; position: absolute; text-align: center; top: 322px; width: 523px; z-index: 100;">
+		        THE SAME SIXTEEN LEGS<br>
                 CARRIED YOU<br>
                 AWAY<br>
-                <BR>
+                <br>
                 I WAITED UNTIL YOUR BUZZING STOPPED<br>
-
-            </p>
-        </div>
-    </div>
-
-             <div class="slide6">
-
-        <div class="slide6-content">
-            <p>
-                THE ONLY OTHER<br>
+            </div>
+	<div id="start.head.174595572295" class="text resizable object" style="background-color: transparent; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-weight: normal; height: 473px; left: 4844px; line-height: 1.69852em; position: absolute; text-align: center; top: 261px; width: 466px; z-index: 100;">
+		        THE ONLY OTHER<br>
                 WHO WILL EVER<br>
                 KNOW ME<br>
-                <BR>
+                <br>
                 LIKE YOU DO<br>
-                <BR>
+                <br>
                 IS THE INSIDE<br>
                 OF YOU<br>
-                <BR>
-                THAT HAS EATEN ME
-            </p>
-        </div>
-    </div>
-
-<!-- =====================
-     JAVASCRIPT (FIXED)
-===================== -->
-<script>
-let scrollSpeed = 1;
-let isScrolling = true;
-
-function autoScroll() {
-    if (isScrolling) {
-        window.scrollBy(scrollSpeed, 0);
-    }
-    requestAnimationFrame(autoScroll);
-}
-
-window.addEventListener("load", () => {
-    requestAnimationFrame(autoScroll);
-});
-
-// click to pause/resume
-window.addEventListener("click", () => {
-    isScrolling = !isScrolling;
-});
-</script>
-
+                <br>
+                THAT HAS EATEN ME<br>
+            </div>
 </body>
 </html>
